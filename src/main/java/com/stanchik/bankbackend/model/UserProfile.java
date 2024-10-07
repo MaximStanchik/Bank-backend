@@ -10,13 +10,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "User_Profile")
 public class UserProfile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private Long id; //TODO: возможно стоит придумать как какое-нибудь другое значение тут будет
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID", nullable = false) //TODO: тут внимательно перепроверить
@@ -28,7 +26,7 @@ public class UserProfile {
     @Column(name = "LAST_NAME", length = 50, nullable = false)
     private String lastName;
 
-    @Column(name = "MIDDLE_NAME", length = 50)
+    @Column(name = "MIDDLE_NAME", length = 50, nullable = true)
     private String middleName;
 
     @Column(name = "ADDRESS", length = 255)
@@ -39,6 +37,9 @@ public class UserProfile {
 
     @Column(name = "EMAIL", length = 100)
     private String email;
+
+    @Column(name = "PASSPORT_NUM", length = 20, nullable = false)
+    private String passportNum;
 
     @Column(name = "PHONE_NUMBER", length = 50)
     private String phoneNumber;

@@ -12,12 +12,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CURRENCY_EXCHANGE_RATE")
 public class CurrencyExchangeRate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
     private Long id;
 
     @ManyToOne
@@ -31,7 +29,7 @@ public class CurrencyExchangeRate {
     @Column(name = "RATE", precision = 15, scale = 2, nullable = false)
     private BigDecimal rate;
 
-    @Column(name = "DATE", nullable = false)
+    @Column(name = "RATE_DATE", nullable = false)
     private Date date;
 
 };

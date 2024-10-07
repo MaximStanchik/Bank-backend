@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Payment_Service")
 public class PaymentService {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
     private Long id;
 
     @Column(name = "NAME", length = 100, nullable = false)

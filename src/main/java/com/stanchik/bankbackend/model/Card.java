@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Card")
 public class Card {
 
     @Id
@@ -21,14 +20,14 @@ public class Card {
     private String type;
 
     @ManyToOne
-    @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID", nullable = false) //TODO: длина ACCOUNT_ID 100 симовлов
+    @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID", nullable = false)
     private Account accountId;
 
     @Column(name = "CARD_NAME", length = 100)
     private String cardName;
 
     @Column(name = "DESCRIPTION", length = 255)
-    private String descript;
+    private String description;
 
     @Column(name = "STATUS", length = 20)
     private String status;

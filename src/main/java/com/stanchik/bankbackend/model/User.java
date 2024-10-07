@@ -11,19 +11,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "User")
+@Table(name = "app_user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
     private Long id;
+
+    @Column(name = "LOGIN", nullable = false)
+    private String login;
 
     @Column(name = "PASSWORD", nullable = false)
     private String password;
-
-    @Column(name = "PASSPORT_NUM", length = 20, nullable = false)
-    private String passportNum;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Account> accounts;

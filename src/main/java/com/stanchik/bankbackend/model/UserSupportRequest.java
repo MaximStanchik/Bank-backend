@@ -12,12 +12,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "USER_SUPPORT_REQUEST")
 public class UserSupportRequest { //Возможно необходимо будет убрать, пока оставлю на всякий случай
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
     private Long id;
 
     @Column(name = "TYPE")
