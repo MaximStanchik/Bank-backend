@@ -18,7 +18,7 @@ public class PaymentService {
     @Column(name = "NAME", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "TYPE", length = 50)
+    @Column(name = "TYPE", length = 50, nullable = false)
     private String type;
 
     @ManyToOne

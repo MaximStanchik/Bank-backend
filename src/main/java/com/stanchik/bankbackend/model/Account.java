@@ -15,7 +15,6 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(length = 100)
     private Long id;
 
     @Column(name = "NAME", nullable = false)
@@ -24,7 +23,7 @@ public class Account {
     @Column(name = "CURRENCY", length = 5, nullable = false)
     private String currency;
 
-    @Column(name = "AMOUNT", precision = 15, scale = 2, nullable = false)
+    @Column(name = "AMOUNT", precision = 15, scale = 2, nullable = true)
     private BigDecimal amount;
 
     @ManyToOne

@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class UserSupportRequest { //Возможно необходимо будет убрать, пока оставлю на всякий случай
+public class UserSupportRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,6 @@ public class UserSupportRequest { //Возможно необходимо буд
 
     @OneToMany
     @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID", nullable = false)
-    private List<Account> accountId; //TODO: вроде лист небезопасен, но это не точно
+    private List<Account> accountId;
 
 };

@@ -17,7 +17,7 @@ public class UserProfile {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "USER_ID", referencedColumnName = "ID", nullable = false) //TODO: тут внимательно перепроверить
+    @JoinColumn(name = "USER_ID", referencedColumnName = "ID", nullable = false)
     private User userId;
 
     @Column(name = "FIRST_NAME", length = 50, nullable = false)
