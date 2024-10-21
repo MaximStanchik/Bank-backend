@@ -26,10 +26,10 @@ public class UserProfile {
     @Column(name = "LAST_NAME", length = 50, nullable = false)
     private String lastName;
 
-    @Column(name = "MIDDLE_NAME", length = 50, nullable = true)
+    @Column(name = "MIDDLE_NAME", length = 50)
     private String middleName;
 
-    @Column(name = "ADDRESS", length = 255)
+    @Column(name = "ADDRESS")
     private String address;
 
     @Column(name = "BIRTH_DATE")
@@ -44,4 +44,4 @@ public class UserProfile {
     @Column(name = "PHONE_NUMBER", length = 50)
     private String phoneNumber;
 
-};
+}

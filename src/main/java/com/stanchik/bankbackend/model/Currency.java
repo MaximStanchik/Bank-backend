@@ -14,10 +14,10 @@ public class Currency {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "NAME", length = 100, nullable = false)
+    @Column(name = "NAME", length = 100, nullable = false, unique = true)
     private String name;
 
-    @Column(name = "CODE", length = 3, nullable = false)
+    @Column(name = "CODE", length = 3, nullable = false, unique = true)
     private String code;
 
-};
+}

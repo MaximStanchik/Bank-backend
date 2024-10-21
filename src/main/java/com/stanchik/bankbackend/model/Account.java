@@ -23,12 +23,12 @@ public class Account {
     @Column(name = "CURRENCY", length = 5, nullable = false)
     private String currency;
 
-    @Column(name = "AMOUNT", precision = 15, scale = 2, nullable = true)
-    private BigDecimal amount;
+    @Column(name = "AMOUNT", precision = 15, scale = 2)
+    private BigDecimal amount = BigDecimal.ZERO;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID", nullable = false)
     private User user;
 
-};
+}
 
