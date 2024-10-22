@@ -1,4 +1,4 @@
-package com.stanchik.bankbackend.model.dto.currencyExchangeRate;
+package com.stanchik.bankbackend.model.dto.rate;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
