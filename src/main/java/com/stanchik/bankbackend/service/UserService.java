@@ -8,11 +8,14 @@ import com.stanchik.bankbackend.model.dto.user.registration.RegisterUserRequestD
 import com.stanchik.bankbackend.model.dto.user.registration.RegisterUserResponseDto;
 import com.stanchik.bankbackend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
+import java.util.stream.Stream;
 
 @RequiredArgsConstructor
 @Service
@@ -75,6 +78,10 @@ public class UserService {
                 throw new RuntimeException("User password doesn't match");
             }
         }).orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    public List<User> getAll() {
+        return Streamable.of(userRepository.findAll()).toList();
     }
 
     //TODO: дописать еще методы те что в дто у меня описаны. Дописать схему бд. Дописать все остальные сервисы. Потом надо будет проверить что все вообще работает. Потом дописать контроллеры. Потом написать фронтенд.

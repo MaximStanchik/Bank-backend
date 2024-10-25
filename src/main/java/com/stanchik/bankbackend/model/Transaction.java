@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -29,6 +30,6 @@ public class Transaction {
     private BigDecimal amount;
 
     @Column(name = "DATE_TIME", nullable = false)
-    private Timestamp dateTime;
+    private LocalDateTime dateTime; // тут Timestamp изменил на LocalDateTime
 
 };
