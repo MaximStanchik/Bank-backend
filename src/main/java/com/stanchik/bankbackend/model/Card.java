@@ -21,7 +21,7 @@ public class Card {
 
     @ManyToOne
     @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID", nullable = false)
-    private Account accountId;
+    private UserAccount userAccountId;
 
     @Column(name = "CARD_NAME", length = 100)
     private String cardName;

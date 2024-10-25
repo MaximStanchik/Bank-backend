@@ -1,6 +1,6 @@
 package com.stanchik.bankbackend.service;
 
-import com.stanchik.bankbackend.model.Account;
+import com.stanchik.bankbackend.model.UserAccount;
 import com.stanchik.bankbackend.model.Currency;
 import com.stanchik.bankbackend.model.User;
 import com.stanchik.bankbackend.model.dto.account.CreateAccountRequestDto;
@@ -22,17 +22,17 @@ public class AccountService {
         User user = userRepository.findById(dto.userId())
                 .orElseThrow(() -> new RuntimeException("User not found by ID: " + dto.userId()));
         Currency currency = currencyService.findByName(dto.currency());
-        Account account = new Account();
-        account.setName(dto.name());
-        account.setCurrency(currency.getName());
-        account.setUser(user);
-        accountRepository.save(account);
+        UserAccount userAccount = new UserAccount();
+        userAccount.setName(dto.name());
+        userAccount.setCurrency(currency.getName());
+        userAccount.setUser(user);
+        accountRepository.save(userAccount);
         return new CreateAccountResponseDto(true);
     }
 
-    public Account findById(Long id) {
+    public UserAccount findById(Long id) {
         return accountRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Account not found by ID: " + id));
+                .orElseThrow(() -> new RuntimeException("UserAccount not found by ID: " + id));
     }
 
 }

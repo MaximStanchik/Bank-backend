@@ -19,11 +19,11 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "ACCOUNT_ID_FROM", referencedColumnName = "ID", nullable = false)
-    private Account accIdFrom;
+    private UserAccount accIdFrom;
 
     @ManyToOne
     @JoinColumn(name = "ACCOUNT_ID_TO", referencedColumnName = "ID", nullable = false)
-    private Account accIdTo;
+    private UserAccount accIdTo;
 
     @Column(name = "AMOUNT", precision = 15, scale = 2, nullable = false)
     private BigDecimal amount;

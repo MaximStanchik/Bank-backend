@@ -1,6 +1,6 @@
 package com.stanchik.bankbackend.repository;
 
-import com.stanchik.bankbackend.model.Account;
+import com.stanchik.bankbackend.model.UserAccount;
 import org.springframework.data.repository.CrudRepository;
-public interface AccountRepository extends CrudRepository<Account, Long> {
+public interface AccountRepository extends CrudRepository<UserAccount, Long> {
 }

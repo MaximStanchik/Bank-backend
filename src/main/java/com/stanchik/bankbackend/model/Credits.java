@@ -23,7 +23,7 @@ public class Credits {
 
     @ManyToOne
     @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID", nullable = false)
-    private Account accountId;
+    private UserAccount userAccountId;
 
     @Column(name = "AMOUNT", precision = 15, scale = 2, nullable = false)
     private BigDecimal amount;

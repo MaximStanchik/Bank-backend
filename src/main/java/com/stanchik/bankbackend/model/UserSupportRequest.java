@@ -30,6 +30,6 @@ public class UserSupportRequest {
 
     @OneToMany
     @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID", nullable = false)
-    private List<Account> accountId;
+    private List<UserAccount> userAccountId;
 
 };
